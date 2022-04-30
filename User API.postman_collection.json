@@ -1,0 +1,65 @@
+{
+  "info": {
+    "_userman_id": "60ad02cb-0c0c-4dc9-83f9-dc3f4042d6bf",
+    "name": "User API",
+    "schema": "https://schema.getuserman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get all users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/users",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["users"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a new user",
+      "request": {
+        "method": "user",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/users",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["users"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a user by id",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/users/1",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["users", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update users",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "localhost:8000/users/1",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["users", "1"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
