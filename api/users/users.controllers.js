@@ -11,6 +11,9 @@ exports.fetchUser = async (userId) => {
 
 exports.usersCreate = async (req, res) => {
   try {
+    if (req.file) {
+      req.body.image = `http://${req.get('host')}/media/${req.file.filename}`;
+    }
     const newUser = await User.create(req.body);
     res.status(201).json(newUser);
   } catch (error) {
@@ -29,6 +32,9 @@ exports.usersDelete = async (req, res) => {
 
 exports.usersUpdate = async (req, res) => {
   try {
+    if (req.file) {
+      req.body.image = `http://${req.get('host')}/media/${req.file.filename}`;
+    }
     await User.findByIdAndUpdate(req.user.id, req.body);
     res.status(204).end();
   } catch (error) {

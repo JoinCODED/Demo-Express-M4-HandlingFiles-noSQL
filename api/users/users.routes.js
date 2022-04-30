@@ -7,6 +7,8 @@ const {
   usersCreate,
 } = require('./users.controllers');
 
+const upload = require('../middleware/multer');
+
 router.param('userId', async (req, res, next, userId) => {
   const user = await fetchMonument(+userId, next);
   if (user) {
@@ -20,10 +22,10 @@ router.param('userId', async (req, res, next, userId) => {
 });
 
 router.get('/', usersGet);
-router.post('/', usersCreate);
+router.post('/', upload.single('image'), usersCreate);
 
 router.delete('/:userId', usersDelete);
 
-router.put('/:userId', usersUpdate);
+router.put('/:userId', upload.single('image'), usersUpdate);
 
 module.exports = router;
